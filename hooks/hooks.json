@@ -1,0 +1,17 @@
+{
+  "description": "oh-my-paul safety hooks",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$CLAUDE_PLUGIN_ROOT/scripts/safety-check.mjs\"",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}

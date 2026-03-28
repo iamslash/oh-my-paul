@@ -1,0 +1,11 @@
+{
+  "name": "oh-my-paul",
+  "version": "0.1.0",
+  "description": "Claude Code plugin for learning — git commit, code review, safety hook, project info",
+  "author": {
+    "name": "iamslash"
+  },
+  "repository": "https://github.com/iamslash/oh-my-paul",
+  "license": "MIT",
+  "mcpServers": "./.mcp.json"
+}
