@@ -182,7 +182,26 @@ Rules:
 - Do NOT write code. Planning only.
 ```
 
-## 6. PreToolUse 훅 (hooks/hooks.json + scripts/safety-check.mjs)
+## 6. explain 스킬 (skills/explain/explain.md)
+
+frontmatter:
+- description: 코드 구조, 로직, 데이터 흐름을 상세히 설명. "설명해줘", "이해하고 싶어" 등의 요청 시 활성화.
+
+프롬프트:
+- Overview → Key Components → Data Flow → Dependencies → Key Decisions 구조
+- Read, Glob, Grep으로 코드 분석 후 설명
+
+## 7. refactor 스킬 (skills/refactor/refactor.md)
+
+frontmatter:
+- description: 안전한 코드 리팩토링 가이드. "리팩토링", "정리", "단순화" 요청 시 활성화.
+
+프롬프트:
+- Analyze → Plan → Execute → Verify 4단계
+- 사용자 확인 후 변경
+- 기존 동작 보존 필수
+
+## 8. PreToolUse 훅 (hooks/hooks.json + scripts/safety-check.mjs)
 
 ### hooks.json 구조
 
@@ -252,7 +271,7 @@ for (const { pattern, label } of dangerousPatterns) {
 process.exit(0);
 ```
 
-## 7. MCP 서버 (mcp/server.mjs)
+## 9. MCP 서버 (mcp/server.mjs)
 
 ### .mcp.json
 
@@ -311,7 +330,7 @@ stdio JSON-RPC 2.0 서버. 1개 도구 제공:
 {"jsonrpc": "2.0", "id": 3, "result": {"content": [{"type": "text", "text": "{\"name\": \"oh-my-paul\", \"version\": \"0.1.0\", ...}"}]}}
 ```
 
-## 8. 구현 순서
+## 10. 구현 순서
 
 1. `.claude-plugin/plugin.json`
 2. `commands/commit.md`, `commands/review.md`
@@ -321,7 +340,7 @@ stdio JSON-RPC 2.0 서버. 1개 도구 제공:
 6. Claude Code에 설치 테스트
 7. Paul에 설치 테스트
 
-## 9. Acceptance Criteria
+## 11. Acceptance Criteria
 
 - [ ] plugin.json이 Claude Code 표준 구조를 따름
 - [ ] /commit → git diff 기반 커밋 메시지 생성 + 실행
