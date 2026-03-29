@@ -38,6 +38,9 @@ claude plugin install oh-my-paul
 | [PRD](docs/prd/01-prd-kr.md) | 범위, 시나리오 |
 | [Design](docs/design/01-architecture-kr.md) | 아키텍처 |
 | [Spec](docs/spec/01-plugin-structure-kr.md) | 구현 스펙 |
+| [AGENTS.md](AGENTS.md) | 에이전트 선택 가이드 |
+| [CHANGELOG.md](CHANGELOG.md) | 버전별 변경 이력 |
+| [Gap Analysis](docs/design/02-omc-omp-comparison-kr.md) | oh-my-claudecode와 비교 |
 
 ## License
 
