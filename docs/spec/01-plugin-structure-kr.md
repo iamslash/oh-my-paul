@@ -330,17 +330,34 @@ stdio JSON-RPC 2.0 서버. 1개 도구 제공:
 {"jsonrpc": "2.0", "id": 3, "result": {"content": [{"type": "text", "text": "{\"name\": \"oh-my-paul\", \"version\": \"0.1.0\", ...}"}]}}
 ```
 
-## 10. 구현 순서
+## 10. PAUL.md (플러그인 지시문)
+
+프로젝트 루트의 PAUL.md는 LLM에 플러그인 사용법을 알려주는 지시문이다.
+- 커맨드, 에이전트, 스킬, MCP 도구, 훅 목록
+- 각 기능의 트리거 조건
+- System prompt에 주입됨
+
+## 11. Templates (규칙 템플릿)
+
+`templates/rules/` 디렉토리에 프로젝트별로 복사할 수 있는 규칙 파일 제공:
+- coding-style.md: 코딩 스타일
+- git-workflow.md: Git 워크플로
+- testing.md: 테스트 규칙
+- security.md: 보안 규칙
+
+## 12. 구현 순서
 
 1. `.claude-plugin/plugin.json`
 2. `commands/commit.md`, `commands/review.md`
 3. `agents/reviewer.md`, `agents/planner.md`
 4. `hooks/hooks.json` + `scripts/safety-check.mjs`
 5. `.mcp.json` + `mcp/server.mjs`
-6. Claude Code에 설치 테스트
-7. Paul에 설치 테스트
+6. `PAUL.md` 작성
+7. `templates/rules/` 템플릿 작성
+8. Claude Code에 설치 테스트
+9. Paul에 설치 테스트
 
-## 11. Acceptance Criteria
+## 13. Acceptance Criteria
 
 - [ ] plugin.json이 Claude Code 표준 구조를 따름
 - [ ] /commit → git diff 기반 커밋 메시지 생성 + 실행

@@ -108,21 +108,32 @@ You are a code review agent. Analyze code for bugs...
 ```
 oh-my-paul/
 ├── .claude-plugin/
-│   └── plugin.json              # 메타데이터
+│   └── plugin.json
 ├── commands/
-│   ├── commit.md                # /commit 커맨드
-│   └── review.md                # /review 커맨드
+│   ├── commit.md
+│   └── review.md
 ├── agents/
-│   ├── reviewer.md              # 코드 리뷰 에이전트
-│   └── planner.md               # 계획 에이전트
+│   ├── reviewer.md
+│   └── planner.md
+├── skills/
+│   ├── explain/explain.md
+│   └── refactor/refactor.md
 ├── hooks/
-│   └── hooks.json               # PreToolUse 훅 등록
+│   └── hooks.json
 ├── scripts/
-│   └── safety-check.mjs         # 위험 명령 감지 스크립트
+│   └── safety-check.mjs
 ├── mcp/
-│   └── server.mjs               # project-info MCP 서버
-├── .mcp.json                    # MCP 서버 설정
-├── docs/                        # 문서
+│   └── server.mjs
+├── templates/
+│   ├── README.md
+│   └── rules/
+│       ├── coding-style.md
+│       ├── git-workflow.md
+│       ├── testing.md
+│       └── security.md
+├── .mcp.json
+├── PAUL.md
+├── docs/
 └── README.md
 ```
 
@@ -169,11 +180,13 @@ LLM이 project-info 도구 호출
 |---|---|---|
 | Commands | ~10 | 2 (/commit, /review) |
 | Agents | 19 | 2 (reviewer, planner) |
-| Skills | ~40 | 0 (commands로 대체) |
+| Skills | ~40 | 2 (explain, refactor) |
 | Hooks | 5+ 스크립트 | 1 (safety-check) |
 | MCP 서버 | 1 (28 도구) | 1 (1 도구) |
 | Orchestration | 8+ 모드 | 없음 |
 | State 관리 | .omc/state/ | 없음 |
+| PAUL.md | CLAUDE.md | PAUL.md |
+| Templates | 없음 | rules/ (4개) |
 | 목적 | 프로덕션 | 학습 |
 
 ## 설계 결정
