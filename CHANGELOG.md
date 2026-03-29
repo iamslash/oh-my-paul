@@ -2,6 +2,11 @@
 
 All notable changes to oh-my-paul will be documented in this file.
 
+## [0.1.1] - 2026-03-29
+
+### Changed
+- Version bump to 0.1.1
+
 ## [0.1.0] - 2026-03-29
 
 ### Added
