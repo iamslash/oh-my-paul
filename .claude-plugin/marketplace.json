@@ -1,0 +1,25 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "oh-my-paul",
+  "description": "Claude Code plugin — git commit, code review, safety hook, project info",
+  "owner": {
+    "name": "iamslash",
+    "email": "iamslash@gmail.com"
+  },
+  "version": "0.1.0",
+  "plugins": [
+    {
+      "name": "oh-my-paul",
+      "description": "Git commit, code review, safety hook, project info, explain/refactor skills",
+      "version": "0.1.0",
+      "author": {
+        "name": "iamslash",
+        "email": "iamslash@gmail.com"
+      },
+      "source": "./",
+      "category": "productivity",
+      "homepage": "https://github.com/iamslash/oh-my-paul",
+      "tags": ["plugin-learning", "git", "code-review", "safety"]
+    }
+  ]
+}
